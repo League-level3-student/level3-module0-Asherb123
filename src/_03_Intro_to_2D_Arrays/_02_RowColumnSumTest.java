@@ -37,6 +37,9 @@ class _02_RowColumnSumTest {
                            { 80, -10, 100 },
                            { 75, -25, -50 } };
     
+  
+    
+    
     _02_RowColumnSum methods = new _02_RowColumnSum();
     
     @Test
@@ -46,7 +49,8 @@ class _02_RowColumnSumTest {
         assertEquals(0, methods.getSumByRow(testMatrix, 2) );
     }
 
-    void testColumnSum() {
+   @Test
+   void testColumnSum() {
         assertEquals(165, methods.getSumByColumn(testMatrix, 0) );
         assertEquals(-15, methods.getSumByColumn(testMatrix, 1) );
         assertEquals(80, methods.getSumByColumn(testMatrix, 2) );
