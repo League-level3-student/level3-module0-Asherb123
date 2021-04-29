@@ -3,7 +3,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class Cell implements Drawable{
-    public static boolean isAlive = false;
+    public  boolean isAlive = false;
 
     private int x;
     private int y;
@@ -35,7 +35,7 @@ public class Cell implements Drawable{
      * as if by reproduction.
      * (source: Wikipedia) 
      */
-    public static void liveOrDie(int numNeighbors) {
+    public  void liveOrDie(int numNeighbors) {
     	if (numNeighbors<2) {
 			isAlive=false;
 			
@@ -43,7 +43,7 @@ public class Cell implements Drawable{
     	if (numNeighbors>=4) {
 			isAlive=false;
 		}
-    if (isAlive=false && numNeighbors==3) {
+    if (!isAlive && numNeighbors==3) {
 		isAlive=true;
 	}
     
