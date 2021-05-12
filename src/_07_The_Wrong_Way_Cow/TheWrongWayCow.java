@@ -66,30 +66,30 @@ public class TheWrongWayCow {
         for (int i = 0; i < field.length; i++) {
 			for (int j = 0; j < field[i].length; j++) {
 			if (field [i] [j] == 'c' ) {
-				if (field [i-1][j] == 'o' && field [i-2][j] == 'w' ) {
+				if (i>=2 && field [i-1][j] == 'o' && field [i-2][j] == 'w' ) {
 					left = left +1;
-					l [0]=i;
-					l [1] = j;
+					l [0]=j;
+					l [1] = i;
 					
 					
 					
 				}
-			if (field [i+1][j] == 'o' && field [i+2][j]=='w') {
+			if ( i<=field.length-3 && field [i+1][j] == 'o' && field [i+2][j]=='w') {
 				
 				right=right+1;
 				
-				l [0]=i;
-				l [1] = j;
+				r [0]=j;
+				r [1] = i;
 			}
-			if (field [i][j-1]== 'o' && field [i][j-2] == 'w') {
+			if (j>= 2 && field [i][j-1]== 'o' && field [i][j-2] == 'w') {
 				up=up+1;
-				l [0]=i;
-				l [1] = j;
+				u [0]=j;
+				u [1] = i;
 			}
-			if (field [i][j+1] == 'o' &&  field [i][j+2] == 'w') {
-				down = down+1;	up=up+1;
-				l [0]=i;
-				l [1] = j;
+			if (j<=field[i].length-3 && field [i][j+1] == 'o' &&  field [i][j+2] == 'w') {
+				down = down+1;	
+				d [0]=j;
+				d [1] = i;
 			}
 			
 			}
@@ -97,8 +97,21 @@ public class TheWrongWayCow {
 				
 			}
 		}
-       
-        
+       if (up==1) {
+		return u;
+	}
+      if (down==1) {
+		return d;
+	}  
+      if (left==1) {
+		return l;
+	}
+      if (right == 1) {
+	 return r;
+	}
+      
+      
+      
         return null;
     }
 }
